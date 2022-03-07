@@ -108,3 +108,14 @@ matrix = [[0, 1, 1, 2],
 # %%
 solution(matrix)
 # %%
+s1="aabcc"
+s2="adcaa"
+
+# %%
+def solution(s1, s2):
+    dic1 = {chara : s1.count(chara) for chara in set(s1)}
+    dic2 = {chara : s2.count(chara) for chara in set(s2)}
+    
+    return sum(min(dic1[x], dic2[x]) for x in dic1.keys() & dic2.keys())
+# %%
+solution(s1,s2)
